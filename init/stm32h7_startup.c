@@ -3,9 +3,9 @@
 */
 
 #include <stdint.h>
-#define STACK_ADDR (0x20000000ULL)
-#define STACK_SIZE (128 * 1024)
-#define STACK_END (STACK_ADDR + STACK_SIZE)
+#define DTCM_RAM_START_ADDR (0x20000000ULL)
+#define DTCM_RAM_SIZE (128 * 1024)
+#define STACK_START (DTCM_RAM_START_ADDR + DTCM_RAM_SIZE)
 #define RESERVED (0)
 
 void reset_handler(void);
@@ -159,8 +159,16 @@ void fdcan3_it1_handler(void) __attribute__((weak, alias("default_handler")));
 void tim23_handler(void) __attribute__((weak, alias("default_handler")));
 void tim24_handler(void) __attribute__((weak, alias("default_handler")));
 
+extern uint32_t _etext;
+extern uint32_t _sdata;
+extern uint32_t _edata;
+extern uint32_t _sbss;
+extern uint32_t _ebss;
+
+int main(void);
+
 uint32_t isr_vector[] __attribute__((section(".isr_vector"))) = {
-    STACK_ADDR,
+    STACK_START,
     (uint32_t)reset_handler,
     (uint32_t)nmi_handler,
     (uint32_t)hardfault_handler,
@@ -350,6 +358,25 @@ void default_handler(void)
 
 void reset_handler(void)
 {
+    //Copiar .data de la FLASH a la DTCM_RAM
+    uint32_t size = (uint32_t)&_edata - (uint32_t)&_sdata;
+
+    uint32_t *p_src = (uint32_t *)(&_etext);
+    uint32_t *p_dest = (uint32_t *)(&_sdata);
+    
+    for (uint32_t i = 0; i < size; i++) {
+        *p_dest++ = *p_src++;
+    }
+    
+    //Inicializar a cero la region bss
+    size = (uint32_t)&_ebss - (uint32_t)&_sbss;
+    p_dest = (uint32_t *)(&_sbss);
+    
+    for (uint32_t i = 0; i < size; i++) {
+        *p_dest = 0;
+    }
+
+    main();
     while (1) {
         continue;
     }

@@ -1,5 +1,0 @@
-# ninja log v7
-1	204	1765496966063956394	stm32h723/CMakeFiles/stm32h723_startup.dir/stm32h723_startup.s.o	edcbd2eacb6723b3
-205	277	1765496966267684222	stm32h723/libstm32h723_startup.a	b945a3565892a422
-1	289	1765496966062971785	bin/CMakeFiles/stm_test.elf.dir/__/src/main.c.o	d2a6e731d8129694
-1	15	1765497073712453107	bin/stm_test.elf	dd5a6f4be030e72b

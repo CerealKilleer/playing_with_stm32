@@ -1,0 +1,16 @@
+build/
+bin/
+obj/
+out/
+CMakeFiles/
+CMakeCache.txt
+*.o
+*.a
+*.elf
+*.map
+*.hex
+*.bin
+*.uf2
+.vscode/
+.idea/
+.settings/

@@ -1,0 +1,10 @@
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_PROCESSOR ARM)
+
+set(ARM_GCC arm-none-eabi)
+
+set(CMAKE_C_COMPILER ${ARM_GCC}-gcc)
+set(CMAKE_CXX_COMPILER ${ARM_GCC}-g++)
+set(CMAKE_ASM_COMPILER ${ARM_GCC}-gcc)
+set(CMAKE_OBJCOPY ${ARM_GCC}-objcopy)
+set(CMAKE_SIZE ${ARM_GCC}-size)

@@ -20,9 +20,17 @@ _estack = ORIGIN(DTCM_RAM) + LENGTH(DTCM_RAM);
 
 SECTIONS
 {
+    .isr_vector :
+    {
+        _sisrvector = .;
+        *(.isr_vector)
+        _eisrvector = .;
+    } >ITCM_RAM AT>FLASH
+
+    _sisrvector_load = LOADADDR(.isr_vector);
+    
     .text : 
     {
-        *(.isr_vector)
         *(.text)
         *(.rodata)
         . = ALIGN(4);

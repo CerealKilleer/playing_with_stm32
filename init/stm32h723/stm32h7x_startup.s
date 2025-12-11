@@ -1,4 +1,5 @@
 .syntax unified
+.cpu cortex-m7
 .thumb
 
 .section .isr_vector,"a",%progbits
@@ -495,33 +496,84 @@ Default_Handler:
 .global Reset_Handler
 .type Reset_Handler, %function
 
+.equ CM7_ITCMCR, 0xE000EF90 @Para habilitar el bus ITCM
+.equ CM7_DTCMCR, 0xE000EF94 @Para habilitar el bus DTCM
+.equ VTOR, 0xE000ED08       @Para indicar que la tabla de ISRs estara en la ITCM
+.equ CPACR, 0xE000ED88      @para habilitar la fpu
+.equ AHBPCR, 0xE000EF98     @para habilitar la interfaz AHBP  
+
 Reset_Handler:
-    ldr r0, =_sdata
-    ldr r1, =_edata
-    ldr r2, =_etext
+_enable_TCM:
+    LDR r0, = CM7_ITCMCR
+    LDR r1, [r0]
+    ORR r1, r1, #0x1
+    STR r1, [r0]
+    LDR r0, = CM7_ITCMCR
+    LDR r1, [r0]
+    ORR r1, r1, #0x1
+    STR r1, [r0]
+    DSB
+    ISB
+
+_enable_fpu:
+    LDR r0, =CPACR 
+    LDR r1, [r0]
+    ORR r1, r1, #(0xF << 20)
+    STR r1, [r0]
+    DSB
+    ISB
+
+_enable_AHBP:
+    LDR r0, =AHBPCR
+    LDR r1, [r0]
+    ORR r1, r1, #0x1
+    STR r1, [r0]
+    DSB
+    ISB
+
+_copy_vector_table_init:
+    LDR r0, = _sisrvector
+    LDR r1, = _eisrvector
+    LDR r2, = _sisrvector_load
+
+_copy_vector_table:
+    CMP r0, r1
+    BHS _vtor
+    LDR r3, [r2], #4
+    STR r3, [r0], #4
+    B _copy_vector_table
+
+_vtor:
+    LDR r0, =VTOR
+    LDR r1, =_sisrvector
+    STR r1, [r0]
+
+_copy_data:
+    LDR r0, =_sdata
+    LDR r1, =_edata
+    LDR r2, =_etext
 
 _data:    
-    cmp r0, r1
-    bhs _bss
-    ldr r3, [r2], #4
-    str r3, [r0], #4
-    b _data
+    CMP r0, r1
+    BHS _bss
+    LDR r3, [r2], #4
+    STR r3, [r0], #4
+    B _data
 
 _bss:
-    ldr r0, =_sbss
-    ldr r1, =_ebss
-    mov r3, #0
+    LDR r0, =_sbss
+    LDR r1, =_ebss
+    MOV r3, #0
 
 _bss_loop:
-    cmp r0, r1
-    bhs _init
-    str r3, [r0], #4
-    b _bss_loop
+    CMP r0, r1
+    BHS _init
+    STR r3, [r0], #4
+    B _bss_loop
 
 _init:
-    bl main
+    BL main
 
 _fault:
-    b _fault
+    B _fault
 
-.size Reset_Handler, . - Reset_Handler

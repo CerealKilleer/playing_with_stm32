@@ -5,8 +5,7 @@ target_compile_options(${TARGET_NAME} PRIVATE ${C_FLAGS})
 target_link_options(${TARGET_NAME} PRIVATE ${LINKER_FLAGS})
 
 target_link_libraries(${TARGET_NAME}
-                        stm32h7x_startup
-                        gpio)
+                        stm32h723_startup)
 
 find_program(ARM_SIZE arm-none-eabi-size REQUIRED)
 

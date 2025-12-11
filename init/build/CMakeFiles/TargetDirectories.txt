@@ -7,9 +7,6 @@
 /home/yonathan/Documentos/stm/init/build/bin/CMakeFiles/stm_test.elf.dir
 /home/yonathan/Documentos/stm/init/build/bin/CMakeFiles/edit_cache.dir
 /home/yonathan/Documentos/stm/init/build/bin/CMakeFiles/rebuild_cache.dir
-/home/yonathan/Documentos/stm/init/build/stm32h7x/CMakeFiles/stm32h7x_startup.dir
-/home/yonathan/Documentos/stm/init/build/stm32h7x/CMakeFiles/edit_cache.dir
-/home/yonathan/Documentos/stm/init/build/stm32h7x/CMakeFiles/rebuild_cache.dir
-/home/yonathan/Documentos/stm/init/build/stm32h7x/hardware/CMakeFiles/gpio.dir
-/home/yonathan/Documentos/stm/init/build/stm32h7x/hardware/CMakeFiles/edit_cache.dir
-/home/yonathan/Documentos/stm/init/build/stm32h7x/hardware/CMakeFiles/rebuild_cache.dir
+/home/yonathan/Documentos/stm/init/build/stm32h723/CMakeFiles/stm32h723_startup.dir
+/home/yonathan/Documentos/stm/init/build/stm32h723/CMakeFiles/edit_cache.dir
+/home/yonathan/Documentos/stm/init/build/stm32h723/CMakeFiles/rebuild_cache.dir

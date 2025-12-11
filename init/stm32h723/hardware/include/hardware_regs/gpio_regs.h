@@ -1,18 +1,12 @@
 #ifndef __HARDWARE_GPIO_REGS_H__
 #define __HARDWARE_GPIO_REGS_H__
 
-#include "types.h"
+#include "platform_defs.h"
 
-#define GPIOA_BASE_REG      _u(0x58020000)
-#define GPIOB_BASE_REG      _u(0x58020400)
-#define GPIOC_BASE_REG      _u(0x58020800)
-#define GPIOD_BASE_REG      _u(0x58020C00)
-#define GPIOE_BASE_REG      _u(0x58021000)
-#define GPIOF_BASE_REG      _u(0x58021400)
-#define GPIOG_BASE_REG      _u(0x58021800)
-#define GPIOH_BASE_REG      _u(0x58021C00)
-#define GPIOJ_BASE_REG      _u(0x58022400)
-#define GPIOK_BASE_REG      _u(0x58022800)
+#define GPIO_BASE_REG       _u(0x58020000)
+#define GPIO_PORT_OFFSET    _u(0x400)
+
+#define GPIO_PORT_BASE_REG(port)  (GPIO_BASE_REG + GPIO_PORT_OFFSET * (port))
 
 //GPIO port mode register (GPIOx_MODER)
 #define GPIO_MODER_OFFSET               _u(0x00)
@@ -69,9 +63,9 @@
 #define GPIO_PUPDR_PUPD_PULL_UP        _u(0x1)
 #define GPIO_PUPDR_PUPD_PULL_DOWN      _u(0x2)
 
-#define GPIOA_PUPDR_RESET                   _u(0x64000000)
-#define GPIOB_PUPDR_RESET                   _u(0x00000100)
-#define GPIOOTHERS_PUPDR_RESET              _u(0x00000000)
+#define GPIOA_PUPDR_RESET              _u(0x64000000)
+#define GPIOB_PUPDR_RESET              _u(0x00000100)
+#define GPIOOTHERS_PUPDR_RESET         _u(0x00000000)
 
 #define GPIO_PUPDR_PUPD_Pos(pin)        (_u(2) * pin)
 #define GPIO_PUPDR_PUPD_Msk(pin)        (GPIO_PUPDR_PUPD_BITS << GPIO_PUPDR_PUPD_Pos(pin))
@@ -97,30 +91,30 @@
 #define GPIO_ODR_OD_Msk(pin)           (GPIO_ODR_OD_BITS << GPIO_ODR_OD_Pos(pin))
 
 //GPIO port bit set/reset register (GPIOx_BSRR)
-#define GPIO_BSRR_OFFSET                    _u(0x18)
-#define GPIO_BSRR_BITS                      _u(0xFFFFFFFF)
-#define GPIO_BSRR_BS_BITS                   _u(0x1)
-#define GPIO_BSRR_BR_BITS                   _u(0x1)
+#define GPIO_BSRR_OFFSET               _u(0x18)
+#define GPIO_BSRR_BITS                 _u(0xFFFFFFFF)
+#define GPIO_BSRR_BS_BITS              _u(0x1)
+#define GPIO_BSRR_BR_BITS              _u(0x1)
 
-#define GPIO_BSRR_RESET                     _u(0x00000000)
+#define GPIO_BSRR_RESET                _u(0x00000000)
 
-#define GPIO_BSRR_BS_Pos(pin)               (pin)
-#define GPIO_BSRR_BS_Msk(pin)               (GPIO_BSRR_BS_BITS << GPIO_BSRR_BS_Pos(pin))
+#define GPIO_BSRR_BS_Pos(pin)          (pin)
+#define GPIO_BSRR_BS_Msk(pin)          (GPIO_BSRR_BS_BITS << GPIO_BSRR_BS_Pos(pin))
 
-#define GPIO_BSRR_BR_Pos(pin)               (pin + 16)
-#define GPIO_BSRR_BR_Msk(pin)               (GPIO_BSRR_BR_BITS << GPIO_BSRR_BR_Pos(pin))
+#define GPIO_BSRR_BR_Pos(pin)          (pin + 16)
+#define GPIO_BSRR_BR_Msk(pin)          (GPIO_BSRR_BR_BITS << GPIO_BSRR_BR_Pos(pin))
 
 //GPIO port configuration lock register (GPIOx_LCKR)
-#define GPIO_LCKR_OFFSET                    _u(0x1C)
-#define GPIO_LCKR_BITS                      _u(0x0001FFFF)
-#define GPIO_LCKR_LCK_BITS                  _u(0x1)
+#define GPIO_LCKR_OFFSET               _u(0x1C)
+#define GPIO_LCKR_BITS                 _u(0x0001FFFF)
+#define GPIO_LCKR_LCK_BITS             _u(0x1)
 
-#define GPIO_LCKR_RESET                     _u(0x00000000)
+#define GPIO_LCKR_RESET                _u(0x00000000)
 
-#define GPIO_LCKR_LCK_Pos(pin)              (pin)
-#define GPIO_LCKR_LCK_Msk(pin)              (GPIO_LCKR_LCK_BITS << GPIO_LCKR_LCK_Pos(pin))
-#define GPIO_LCKR_LCKK_Pos                  16
-#define GPIO_LCKR_LCKK_Msk                  (GPIO_LCKR_LCK_BITS << GPIO_LCKR_LCKK_Pos)
+#define GPIO_LCKR_LCK_Pos(pin)         (pin)
+#define GPIO_LCKR_LCK_Msk(pin)         (GPIO_LCKR_LCK_BITS << GPIO_LCKR_LCK_Pos(pin))
+#define GPIO_LCKR_LCKK_Pos             16
+#define GPIO_LCKR_LCKK_Msk             (GPIO_LCKR_LCK_BITS << GPIO_LCKR_LCKK_Pos)
 
 //GPIO alternate function low register (GPIOx_AFRL)
 #define GPIO_AFRL_OFFSET                    _u(0x20)

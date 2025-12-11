@@ -5,8 +5,7 @@
 		"/home/yonathan/Documentos/stm/init/build/src/cmake_install.cmake",
 		"/home/yonathan/Documentos/stm/init/build/include/cmake_install.cmake",
 		"/home/yonathan/Documentos/stm/init/build/bin/cmake_install.cmake",
-		"/home/yonathan/Documentos/stm/init/build/stm32h7x/cmake_install.cmake",
-		"/home/yonathan/Documentos/stm/init/build/stm32h7x/hardware/cmake_install.cmake"
+		"/home/yonathan/Documentos/stm/init/build/stm32h723/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

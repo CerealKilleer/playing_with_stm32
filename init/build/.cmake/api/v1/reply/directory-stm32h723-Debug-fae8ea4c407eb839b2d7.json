@@ -13,7 +13,7 @@
 	"installers" : [],
 	"paths" : 
 	{
-		"build" : "stm32h7x",
-		"source" : "stm32h7x"
+		"build" : "stm32h723",
+		"source" : "stm32h723"
 	}
 }

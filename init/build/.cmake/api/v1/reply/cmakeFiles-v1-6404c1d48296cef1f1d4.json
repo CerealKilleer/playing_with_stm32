@@ -249,10 +249,7 @@
 			"path" : "bin/CMakeLists.txt"
 		},
 		{
-			"path" : "stm32h7x/CMakeLists.txt"
-		},
-		{
-			"path" : "stm32h7x/hardware/CMakeLists.txt"
+			"path" : "stm32h723/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",

@@ -66,11 +66,7 @@
 	[
 		{
 			"backtrace" : 3,
-			"id" : "stm32h7x_startup::@b50427de587ae1a9bc28"
-		},
-		{
-			"backtrace" : 3,
-			"id" : "gpio::@e494acc213442912032c"
+			"id" : "stm32h723_startup::@4c3646808d4c8292ca90"
 		}
 	],
 	"compileGroups" : 
@@ -123,10 +119,6 @@
 				{
 					"backtrace" : 5,
 					"path" : "/home/yonathan/Documentos/stm/init/include"
-				},
-				{
-					"backtrace" : 3,
-					"path" : "/home/yonathan/Documentos/stm/init/stm32h7x/hardware/gpio/include"
 				}
 			],
 			"language" : "C",
@@ -148,11 +140,7 @@
 	[
 		{
 			"backtrace" : 3,
-			"id" : "stm32h7x_startup::@b50427de587ae1a9bc28"
-		},
-		{
-			"backtrace" : 3,
-			"id" : "gpio::@e494acc213442912032c"
+			"id" : "stm32h723_startup::@4c3646808d4c8292ca90"
 		}
 	],
 	"id" : "stm_test.elf::@90a2315b7a9c97cd24d2",
@@ -166,7 +154,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-T/home/yonathan/Documentos/stm/init/stm32h7x/stm32h743.ld",
+				"fragment" : "-T/home/yonathan/Documentos/stm/init/stm32h723/stm32h743.ld",
 				"role" : "flags"
 			},
 			{
@@ -191,12 +179,7 @@
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "stm32h7x/libstm32h7x_startup.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
-				"fragment" : "stm32h7x/hardware/libgpio.a",
+				"fragment" : "stm32h723/libstm32h723_startup.a",
 				"role" : "libraries"
 			}
 		],
@@ -206,11 +189,7 @@
 	[
 		{
 			"backtrace" : 3,
-			"id" : "stm32h7x_startup::@b50427de587ae1a9bc28"
-		},
-		{
-			"backtrace" : 3,
-			"id" : "gpio::@e494acc213442912032c"
+			"id" : "stm32h723_startup::@4c3646808d4c8292ca90"
 		}
 	],
 	"name" : "stm_test.elf",

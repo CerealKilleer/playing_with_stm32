@@ -1,20 +1,14 @@
 [
 {
   "directory": "/home/yonathan/Documentos/stm/init/build",
-  "command": "arm-none-eabi-gcc -I/home/yonathan/Documentos/stm/init/include -I/home/yonathan/Documentos/stm/init/stm32h7x/hardware/gpio/include -g -std=gnu11 -mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard -W -Wall -Wextra -g3 -O0 -o bin/CMakeFiles/stm_test.elf.dir/__/src/main.c.o -c /home/yonathan/Documentos/stm/init/src/main.c",
+  "command": "arm-none-eabi-gcc -I/home/yonathan/Documentos/stm/init/include -g -std=gnu11 -mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard -W -Wall -Wextra -g3 -O0 -o bin/CMakeFiles/stm_test.elf.dir/__/src/main.c.o -c /home/yonathan/Documentos/stm/init/src/main.c",
   "file": "/home/yonathan/Documentos/stm/init/src/main.c",
   "output": "/home/yonathan/Documentos/stm/init/build/bin/CMakeFiles/stm_test.elf.dir/__/src/main.c.o"
 },
 {
   "directory": "/home/yonathan/Documentos/stm/init/build",
-  "command": "arm-none-eabi-gcc -g -mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard -W -Wall -Wextra -g3 -O0 -o stm32h7x/CMakeFiles/stm32h7x_startup.dir/stm32h7x_startup.s.o -c /home/yonathan/Documentos/stm/init/stm32h7x/stm32h7x_startup.s",
-  "file": "/home/yonathan/Documentos/stm/init/stm32h7x/stm32h7x_startup.s",
-  "output": "/home/yonathan/Documentos/stm/init/build/stm32h7x/CMakeFiles/stm32h7x_startup.dir/stm32h7x_startup.s.o"
-},
-{
-  "directory": "/home/yonathan/Documentos/stm/init/build",
-  "command": "arm-none-eabi-gcc -I/home/yonathan/Documentos/stm/init/stm32h7x/hardware/gpio/include -I/home/yonathan/Documentos/stm/init/stm32h7x/hardware/../common/include -g -std=gnu11 -mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard -W -Wall -Wextra -g3 -O0 -o stm32h7x/hardware/CMakeFiles/gpio.dir/gpio/gpio.c.o -c /home/yonathan/Documentos/stm/init/stm32h7x/hardware/gpio/gpio.c",
-  "file": "/home/yonathan/Documentos/stm/init/stm32h7x/hardware/gpio/gpio.c",
-  "output": "/home/yonathan/Documentos/stm/init/build/stm32h7x/hardware/CMakeFiles/gpio.dir/gpio/gpio.c.o"
+  "command": "arm-none-eabi-gcc -g -mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard -W -Wall -Wextra -g3 -O0 -o stm32h723/CMakeFiles/stm32h723_startup.dir/stm32h723_startup.s.o -c /home/yonathan/Documentos/stm/init/stm32h723/stm32h723_startup.s",
+  "file": "/home/yonathan/Documentos/stm/init/stm32h723/stm32h723_startup.s",
+  "output": "/home/yonathan/Documentos/stm/init/build/stm32h723/CMakeFiles/stm32h723_startup.dir/stm32h723_startup.s.o"
 }
 ]

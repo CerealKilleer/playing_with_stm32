@@ -1,7 +1,5 @@
 # ninja log v7
-1	7	1765430615928790476	stm32h7x/CMakeFiles/stm32h7x_startup.dir/stm32h7x_startup.s.o	453b764d31ee6a06
-1	23	1765431497799445631	bin/CMakeFiles/stm_test.elf.dir/__/src/main.c.o	3f3a7e3c894c2f15
-2	29	1765431113542920044	stm32h7x/hardware/CMakeFiles/gpio.dir/gpio/gpio.c.o	b2b60824e1fdfdac
-7	39	1765430615936241966	stm32h7x/libstm32h7x_startup.a	d0cfba92518bb4a1
-29	63	1765431113570087672	stm32h7x/hardware/libgpio.a	48e80cd5ce1b9068
-23	34	1765431497821445837	bin/stm_test.elf	19ae987f56e5d134
+1	204	1765496966063956394	stm32h723/CMakeFiles/stm32h723_startup.dir/stm32h723_startup.s.o	edcbd2eacb6723b3
+205	277	1765496966267684222	stm32h723/libstm32h723_startup.a	b945a3565892a422
+1	289	1765496966062971785	bin/CMakeFiles/stm_test.elf.dir/__/src/main.c.o	d2a6e731d8129694
+1	15	1765497073712453107	bin/stm_test.elf	dd5a6f4be030e72b
